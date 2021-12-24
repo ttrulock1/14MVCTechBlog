@@ -1,0 +1,21 @@
+<div class="container">
+    {{#if loggedIn}}
+    <div class="row">
+        <div class="col-12 col-sm-12 m-2">
+            <button class="w-100 btn btn-lg btn-primary m-1" id="new-post-button"
+                onclick="location.href='/new-blog-post'">+ New Post</button>
+        </div>
+    </div>
+    {{#each this.posts }}
+    <div class="row">
+        <div class="card col-12 col-sm-12 m-2 clickableBlogPost" data-id="{{ id }}">
+            <div class="card-body">
+                <span class="float-start">{{ title }} </span>
+                <span class="float-end">{{ dateStringForPost }}</span>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+<script src="/js/dashboard.js"></script>
